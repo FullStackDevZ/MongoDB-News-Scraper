@@ -29,9 +29,14 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
 
 // Routes
+
+const dbURI = process.env.MONGODB_URI || "mongodb://localhost:27017/newsArticles";
+
+mongoose.set('useCreateIndex', true)
+mongoose.connect(dbURI, { useNewUrlParser: true });
 
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
