@@ -7,8 +7,8 @@ var mongoose = require("mongoose");
 // It works on the client and on the server
 var axios = require("axios");
 var cheerio = require("cheerio");
-var mongoose = require('mongoose'),
-var methodOverride = require('method-override');
+var mongoose = require('mongoose');
+// var methodOverride = require('method-override');
 
 // Require all models
 var db = require("./models");
